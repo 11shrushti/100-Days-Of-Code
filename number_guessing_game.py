@@ -44,15 +44,11 @@ def game():
             return turns-1
         else:
             print(f"You got it ! The answer was {answer}")  
-    
-                    
-
+            
     print("Welcome to the NUmber Guessing Game!")
     print("I'm thinking of a number between 1 to 100.")
 
     turns = set_difficulty()
-   
-
     guessed_number = 0
     # gussed number by the user
     while guessed_number != answer:
@@ -60,4 +56,7 @@ def game():
         guessed_number = int(input("Make a guess: ")) 
         # calling the function
         turns = check_answer(answer,guessed_number,turns)
+        if turns == 0:
+            print("You have run out of turns. You lose.")
+            return
 game()                    
