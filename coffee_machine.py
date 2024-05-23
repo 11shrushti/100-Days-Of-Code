@@ -1,7 +1,7 @@
 
 from coffee_menu import MENU,resources
 is_on = True
-# need to keep a trackk of the money
+# need to keep a track of the money
 profit = 0
 # make a funcion to compare the rescores from the drink and how many are left
 def is_recorces_sufficient(order_ingredients):
@@ -29,7 +29,7 @@ def trancation_successful(money_recived, drink_cost):
      if money_recived >= drink_cost:
          change = round(money_recived - drink_cost,2)
          print(f"Here is ${change} in change.")
-         # profit is in golabl scope andwe need to use in the local scope so we use the vvariable global
+         # profit is in golabl scope and we need to use in the local scope so we use the variable global
          global profit
          profit += drink_cost
          return True
@@ -38,7 +38,7 @@ def trancation_successful(money_recived, drink_cost):
           return False
           
 def make_coffee(drink_name, order_ingredients):
-     """Deducct the required ingredients from the rescorces. """
+     """Deduct the required ingredients from the rescorces. """
      for items in order_ingredients:
           resources[items] -= order_ingredients[items]
      print(f"Here is your {drink_name} ☕")      
